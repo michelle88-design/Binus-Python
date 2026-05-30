@@ -1,0 +1,5 @@
+nilaiA = float(input("Enter nilaiA: "))
+nilaiB = float(input("Enter nilaiB: "))
+nilaiC = float(input("Enter nilaiC: "))
+diskriminan = nilaiB**2 - (4* nilaiA * nilaiC)
+print ("Ini adalah diskiriminan: " + str(diskriminan)) 
