@@ -1,0 +1,23 @@
+def calculate_average_grade():
+    grade_points = {
+        "A": 4.00, "A-": 3.75, "B+": 3.50, "B": 3.00, "B-": 2.75,
+        "C+": 2.50, "C": 2.00, "C-": 1.75, "D": 1.50, "E": 1.20
+    }
+    total_points = 0
+    count = 0
+    while True:
+        user_input = input("Enter Grade Category (Press Enter to Stop): ").strip().upper()
+        if user_input == "":
+            break
+        if user_input in grade_points:
+            total_points += grade_points[user_input]
+            count += 1
+        else:
+            print("Invalid grade category. Please try again.")
+    if count > 0:
+        average = total_points / count
+        designation = min(grade_points, key=lambda k: abs(grade_points[k] - average))
+        print(f"The average grade is {average:.2f} with a designation of {designation}")
+    else:
+        print("No grades were entered.")
+calculate_average_grade()
