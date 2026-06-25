@@ -1,0 +1,39 @@
+def print_profile():
+    print("---------------------")
+    print("| Michelle Angana   |")
+    print("|   Muarakarang     |")
+    print("---------------------")
+def calculate_all(val1=0, val2=0):
+    results = {
+        '+': val1 + val2,
+        '-': val1 - val2,
+        '*': val1 * val2,
+        '/': val1 / val2 if val2 != 0 else "Undefined",
+        '%': val1 % val2 if val2 != 0 else "Undefined"
+    }
+    return results
+
+op_names = {
+    '+': 'addition',
+    '-': 'subtraction',
+    '/': 'division',
+    '*': 'multiplication',
+    '%': 'modulus'
+}
+print_profile()
+print()
+while True:
+    menu = input("Enter Menu (+|-|/|*|%|stop): ").strip().lower()
+    if menu == "stop":
+        print("Program stopped. Thank you for using my program.")
+        break
+    if menu in op_names:
+        v1 = int(input("Enter Value 1: "))
+        v2 = int(input("Enter Value 2: "))
+        all_results = calculate_all(v1, v2)
+        final_answer = all_results[menu]
+        print(f"The result of {op_names[menu]} {v1} {menu} {v2} is {final_answer}")
+        print()
+    else:
+        print("Invalid option. Please try again.")
+        print()
