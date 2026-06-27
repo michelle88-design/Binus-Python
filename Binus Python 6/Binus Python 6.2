@@ -47,7 +47,12 @@ while True:
         student1 = Student(name, major, ip)
         print("Data Sucessfully Added")
     elif choice == "2":
-        student1.printStudent() 
+        studentName = Student.getName()
+        print("Name:", studentName)
+        studentMajor = Student.getMajor()
+        print("Major:", studentMajor)
+        studentIP = Student.getIP()
+        print("IP:", studentIP)
     elif choice == "3":
         change = input("What would you like to change (Name/Major/IP): ")
         if change == "Name":
