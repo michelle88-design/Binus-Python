@@ -1,0 +1,21 @@
+class Student:
+    "Common base class for all student"
+    empCount = 0
+    
+    def __init__(self,name="Student",major="Business",IP = "3.6"):
+        self.name = name
+        self.major = major 
+        self.IP = IP
+        Student.empCount += 1
+    
+    def displayCount(self):
+        print("Total Employees: %d" % Student.empCount)
+        
+    def printStudent(self):
+        print("Name:", self.name, "\nMajor:", self.major, "\nIP", self.IP)
+name= input("Masukan Nama:")
+major= input("Masukan Major:")
+ip= float(input("Masukan IP:"))
+student1 = Student(name,major,ip)
+student1.printStudent()
+student1.displayCount()

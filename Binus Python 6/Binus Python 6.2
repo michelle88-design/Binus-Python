@@ -1,0 +1,74 @@
+class Student:
+    "Common base class for all student"
+    empCount = 0
+    
+    def __init__(self,name="None",major="None",IP = "None"):
+        self.name = name
+        self.major = major 
+        self.IP = IP
+        Student.empCount += 1
+    
+    def displayCount(self):
+        print("Total Employees: %d" % Student.empCount)
+        
+    def printStudent(self):
+        print("Name:", self.name, "\nMajor:", self.major, "\nIP", self.IP)
+    def getName(self, name):
+        return self.name
+    def getMajor(self, major):
+        return self.major
+    def getIP(self, IP):
+        return self.IP
+    def setName(self, name):
+        self.name = name
+    def setMajor(self, major):
+        self.major = major
+    def setIP(self, IP):
+        self.IP = IP
+    def clearData(self):
+        self.name = "None"
+        self.major = "None"
+        self.IP = "None"
+student1 = Student()
+
+print("==== OOP Program ====")
+print("1. Declare Object")
+print("2. Display Object")
+print("3. Change Object Value")
+print("4. Delete Object")
+print("5. Exit Program")
+while True:
+    choice = input("Enter Your Choice (1/2/3/4/5):")
+    
+    if choice == "1":
+        name = input("Enter Name: ")
+        major = input("Enter Your Major: ")
+        ip = float(input("Enter Your IP: "))
+        student1 = Student(name, major, ip)
+        print("Data Sucessfully Added")
+    elif choice == "2":
+        student1.printStudent() 
+    elif choice == "3":
+        change = input("What would you like to change (Name/Major/IP): ")
+        if change == "Name":
+            newname = input("New Name: ")
+            student1.setName(newname)
+            print("Name Data Sucessfully Changed")
+        elif change == "Major":
+            newmajor= input("New Major: ")
+            student1.setMajor(newmajor)
+            print("Major Data Sucessfully Changed")
+        elif change == "IP":
+            newIP = input("New IP: ")
+            student1.setIP(newIP)
+            print("Name IP Sucessfully Changed")
+        else:
+            print("Invalid change")
+    elif choice == "4":
+        student1.clearData()
+        print("Data Sucessfully Deleted")
+    elif choice == "5":
+        print("Thank you for using my program.")
+        break
+    else:
+        print("Invalid choice. Please choose 1-5.")
