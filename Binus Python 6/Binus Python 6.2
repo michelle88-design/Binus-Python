@@ -13,11 +13,11 @@ class Student:
         
     def printStudent(self):
         print("Name:", self.name, "\nMajor:", self.major, "\nIP", self.IP)
-    def getName(self, name):
+    def getName(self):
         return self.name
-    def getMajor(self, major):
+    def getMajor(self):
         return self.major
-    def getIP(self, IP):
+    def getIP(self):
         return self.IP
     def setName(self, name):
         self.name = name
@@ -44,14 +44,15 @@ while True:
         name = input("Enter Name: ")
         major = input("Enter Your Major: ")
         ip = float(input("Enter Your IP: "))
+        student1 = None
         student1 = Student(name, major, ip)
         print("Data Sucessfully Added")
     elif choice == "2":
-        studentName = Student.getName()
+        studentName = student1.getName()
         print("Name:", studentName)
-        studentMajor = Student.getMajor()
+        studentMajor = student1.getMajor()
         print("Major:", studentMajor)
-        studentIP = Student.getIP()
+        studentIP = student1.getIP()
         print("IP:", studentIP)
     elif choice == "3":
         change = input("What would you like to change (Name/Major/IP): ")
